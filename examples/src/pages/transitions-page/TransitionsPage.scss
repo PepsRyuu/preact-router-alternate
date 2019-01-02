@@ -1,0 +1,108 @@
+.TransitionsPage {
+    padding: 0 20px;
+
+    .container {
+        position: relative;
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        font-size: 48px;
+        color: white;
+        text-align: center;
+        line-height: 300px;
+        perspective: 1000;
+    }
+
+    .entry {
+        height: 100%;
+
+        &[data-index="0"] {
+            background-color: red;
+        }
+
+        &[data-index="1"] {
+            background-color: green;
+        }
+
+         &[data-index="2"] {
+            background-color: blue;
+        }
+
+         &[data-index="3"] {
+            background-color: yellow;
+        }
+
+         &[data-index="4"] {
+            background-color: purple;
+        }
+    }
+}
+
+.slide-up-leave, .slide-left-leave {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.slide-up-leave-active, .slide-left-leave-active {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.slide-up-enter {
+    transform: translateY(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.slide-up-enter-active {
+    transition: transform 0.3s linear;
+    transform: translateY(0);
+}
+
+.slide-left-enter {
+    transform: translateX(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.slide-left-enter-active {
+    transition: transform 0.3s linear;
+    transform: translateX(0);
+}
+
+
+.flip-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(0);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.flip-leave-active {
+    transition: transform 0.3s linear;
+    transform: rotateY(180deg);
+}
+
+.flip-enter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg) ;
+    backface-visibility: hidden;
+}
+
+.flip-enter-active {
+    transition: transform 0.3s linear;
+    transform: rotateY(0);
+}

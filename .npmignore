@@ -1,0 +1,9 @@
+package-lock.json
+.gitignore
+src/
+test/
+examples/
+rollup.config.js
+README.md
+API.md
+*.tgz

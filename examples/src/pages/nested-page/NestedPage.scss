@@ -1,0 +1,39 @@
+.NestedPage {
+    padding: 0 20px;
+
+    .tabs {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+
+        &-header {
+            background-color: #ccc;
+            height: 40px;
+            display: flex;
+
+            > * {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid black;
+            }
+
+            > *:not(:last-child) {
+                border-right: 1px solid black;
+            }
+        }
+
+        &-body {
+            position: relative;
+        }
+
+        &-active {
+            color: black !important;
+        }
+    }
+
+    .TabContent {
+        padding: 20px;
+    }
+}

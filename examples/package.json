@@ -1,0 +1,19 @@
+{
+    "scripts": {
+        "start": "node serve.js"
+    },
+    "dependencies": {
+        "preact": "*",
+        "preact-router-alternate": "*"
+    },
+    "devDependencies": {
+        "express": "^4.16.3",
+        "express-history-api-fallback": "^2.2.1",
+        "nollup": "^0.3.0",
+        "node-sass": "^4.11.0",
+        "rollup-plugin-alias": "^1.5.1",
+        "rollup-plugin-buble": "^0.19.2",
+        "rollup-plugin-hot-css": "0.0.3",
+        "rollup-plugin-node-resolve": "^3.4.0"
+    }
+}
