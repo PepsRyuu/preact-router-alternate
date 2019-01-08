@@ -30,7 +30,7 @@ export default class Router extends Component {
         applyHistoryIndex();
     }
 
-    componentDidMount () {
+    componentWillMount () {
         window.addEventListener('popstate', this.onPopState);
     }
 

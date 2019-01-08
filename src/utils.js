@@ -72,6 +72,10 @@ export function getMatchingRoute (location, routes) {
         return true;
     });
 
+    if (route.attributes.to) {
+        matched = '__redirect__';
+    }
+
     if (route) {
         route.attributes.location = location;
     } else {
