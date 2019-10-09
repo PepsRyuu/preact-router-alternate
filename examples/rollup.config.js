@@ -1,5 +1,5 @@
 let node_resolve = require('rollup-plugin-node-resolve');
-let buble = require('rollup-plugin-buble');
+let babel = require('rollup-plugin-babel');
 let hotcss = require('rollup-plugin-hot-css');
 let path = require('path');
 
@@ -25,10 +25,7 @@ module.exports = {
             filename: 'styles.css',
             transform: scss
         }),
-        buble({
-            jsx: 'h',
-            objectAssign: 'Object.assign'
-        }),
+        babel(),
         node_resolve()
     ]
 }

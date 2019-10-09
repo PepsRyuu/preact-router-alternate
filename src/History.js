@@ -2,7 +2,8 @@ import { dispatchPopState } from './utils';
 
 export default class History {
     static go (href, state) {
-        history.pushState(state || {}, '', href);
+        // For some reason, for prompt, '' doesn't work. Must be '/'
+        history.pushState(state || {}, '', href || '/');
         dispatchPopState();
     }
 }

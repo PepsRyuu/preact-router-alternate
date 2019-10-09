@@ -50,7 +50,7 @@ export function dispatchPopState () {
  * @return {Object}
  */
 export function getMatchingRoute (location, routes) {
-    location = location || currentLocation;
+    location = location !== undefined? location : currentLocation;
 
     if (typeof location === 'string') {
         // TOOD: What about query and hash?
@@ -72,7 +72,7 @@ export function getMatchingRoute (location, routes) {
         return true;
     });
 
-    if (route.attributes.to) {
+    if (route && route.attributes.to) {
         matched = '__redirect__';
     }
 

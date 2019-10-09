@@ -1,4 +1,4 @@
-let buble = require('rollup-plugin-buble');
+let babel = require('rollup-plugin-babel');
 
 module.exports = {
     input: './src/index.js',
@@ -8,9 +8,6 @@ module.exports = {
     },
     externals: ['preact'],
     plugins: [
-        buble({
-            jsx: 'h',
-            objectAssign: 'Object.assign'
-        })
+        babel()
     ]
 }

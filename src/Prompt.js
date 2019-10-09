@@ -22,12 +22,15 @@ export default class Prompt extends Component {
 
     componentDidMount () {
         getPromptStatus().prompts.push(this);
+        if (this.props.when) {
+            window.addEventListener('beforeunload', this.__onBeforeUnload);
+        }
     }
 
     componentWillReceiveProps (nextProps) {
-        if (nextProps.when) {
+        if (nextProps.when && !this.props.when) {
             window.addEventListener('beforeunload', this.__onBeforeUnload);
-        } else {
+        } else if (!nextProps.when) {
             window.removeEventListener('beforeunload', this.__onBeforeUnload);
         }
     }
