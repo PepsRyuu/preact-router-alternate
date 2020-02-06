@@ -18,7 +18,7 @@ function applyHistoryIndex () {
     let state = history.state || {};
     if (state.__index === undefined) {
         state.__index = historyIndex++;
-        history.replaceState(state, '', undefined);
+        history.replaceState(state, '');
     }
     return state;
 }
